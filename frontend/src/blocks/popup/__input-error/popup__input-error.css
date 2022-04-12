@@ -1,0 +1,15 @@
+.popup__input-error {
+    position: absolute;
+    display: none;
+    color: #FF0000;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 5px 36px 0px 36px;
+    text-align: left;
+}
+
+@media all and (max-width: 700px) {
+    .popup__input-error {
+        padding: 2px 22px 0px 22px;
+    }
+  } 

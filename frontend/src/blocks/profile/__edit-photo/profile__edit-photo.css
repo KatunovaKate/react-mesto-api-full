@@ -1,0 +1,16 @@
+.profile__edit-photo {
+    position: absolute;
+    background-image: url(../../../images/pencil.png);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position: center;
+    border: 0;
+    opacity: 0.8;
+    display: none;
+}

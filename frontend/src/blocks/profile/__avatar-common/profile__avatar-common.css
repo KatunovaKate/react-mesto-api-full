@@ -1,0 +1,7 @@
+.profile__avatar-common {
+    position: relative;
+}
+
+.profile__avatar-common:hover .profile__edit-photo{
+    display: block;
+} 

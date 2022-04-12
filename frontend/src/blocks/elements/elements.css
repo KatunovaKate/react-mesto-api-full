@@ -1,0 +1,9 @@
+.elements {
+    padding: 0 27px;
+}
+
+@media all and (max-width: 700px) {
+    .elements {
+        padding: 0 19px;
+    }
+  }
