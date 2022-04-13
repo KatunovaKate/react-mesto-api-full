@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { login, createUser } = require('./controllers/users');
 const { authValidation } = require('./middlewares/validation');
 const { errorHandler } = require('./middlewares/errorHandler');
@@ -16,6 +17,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
+app.use(cors({
+  origin: '*',
+  credentials: true,
+}));
 app.use(requestLogger);
 
 app.post('/signin', authValidation, login);
