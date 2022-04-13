@@ -5,14 +5,14 @@ function PopupWithForm(props) {
     <div className={`popup ${props.isOpen ? "popup_opened" : ""}`}>
       <div className="popup__container">
         <button
-          className={`popup__close-button popup__close-button_class_${props.name} button button_type_m-opacity`}
+          className={`popup__close-button button button_type_m-opacity`}
           onClick={props.onClose}
           type="button"
         ></button>
         <h3 className="popup__title">{`${props.title}`}</h3>
         <form
           onSubmit={props.onSubmit}
-          className={`popup__form popup__form_class_${props.name}`}
+          className={`popup__form`}
           method="POST"
           name={`${props.name}`}
         >

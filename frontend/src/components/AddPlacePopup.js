@@ -38,7 +38,7 @@ function AddPlacePopup({ isOpen, onClose, onUpdateUser }) {
         value={title}
         onChange={handleTitleChange}
         placeholder="Название"
-        className="popup__form-name popup__input popup__form-name_class_add"
+        className="popup__form popup__input"
         type="text"
         name="title-of-image"
         id="title-of-image"
@@ -54,7 +54,7 @@ function AddPlacePopup({ isOpen, onClose, onUpdateUser }) {
         value={image}
         onChange={handleImageChange}
         placeholder="Ссылка на картинку"
-        className="popup__form-description popup__input popup__form-description_class_add"
+        className="popup__form popup__input"
         name="image"
         id="image"
         required

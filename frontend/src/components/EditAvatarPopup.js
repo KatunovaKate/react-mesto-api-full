@@ -27,7 +27,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       <input
         ref={avatarRef}
         placeholder="Ссылка на картинку"
-        className="popup__form-description popup__input popup__form-description_change-photo"
+        className="popup__form popup__input"
         name="photo"
         id="photo"
         required
