@@ -1,5 +1,6 @@
+const { TOKEN_SECRET_KEY } = process.env;
+
 const jwt = require('jsonwebtoken');
-const { TOKEN_SECRET_KEY } = require('../config/config');
 const NotAccessError = require('../errors/not-access-err');
 
 module.exports = (req, res, next) => {

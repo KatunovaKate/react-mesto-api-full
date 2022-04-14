@@ -1,7 +1,7 @@
+const { TOKEN_SECRET_KEY, SALT_ROUNDS } = process.env;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-const { TOKEN_SECRET_KEY, SALT_ROUNDS } = require('../config/config');
 const NotFoundError = require('../errors/not-found-err');
 const NotAccessError = require('../errors/not-access-err');
 const ConflictError = require('../errors/conflict-err');
