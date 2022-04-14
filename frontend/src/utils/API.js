@@ -7,6 +7,10 @@ class Api {
         this.avatar = config.avatar;
     }
     
+    getToken = () => {
+        return `Bearer ${localStorage.getItem("jwt")}`
+    }
+
     _checkStatus(res) {
       if (res.ok) {
         return res.json();
@@ -68,7 +72,7 @@ class Api {
     }
 
     toggleLike(_id, isLiked) {
-        return fetch(`${this._url}cards/likes/${_id}`, {
+        return fetch(`${this._url}cards/${_id}/likes`, {
           method: isLiked ? 'PUT' : 'DELETE',
           headers: this._headers,
         }).then(res => this._checkStatus(res))
@@ -79,7 +83,7 @@ const api = new Api({
     url: "https://api.mesto.katunova.nomoredomains.work/",
     headers: {
       "Content-Type": 'application/json',
-      authorization: '599d58cc-8009-4c2f-8eaa-205713197ccb',
+      "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
     },
   })
 
