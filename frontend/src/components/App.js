@@ -33,12 +33,12 @@ function App() {
   const history = useHistory();
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((like) => like._id === currentUser._id);
     api
       .toggleLike(card._id, !isLiked)
       .then((newCard) => {
         setCards((state) =>
-          state.map((c) => (c._id === card._id ? newCard : c))
+          state.map((c) => (c._id === card._id ? newCard.data : c))
         );
       })
       .catch((err) => console.log(err));
@@ -96,7 +96,7 @@ function App() {
     api
       .setUserInfo({ name, about })
       .then((userData) => {
-        setCurrentUser(userData);
+        setCurrentUser(userData.data);
         closeAllPopups();
       })
       .catch((err) => console.log(err));
@@ -106,7 +106,7 @@ function App() {
     api
       .setAvatar({ avatar })
       .then((userData) => {
-        setCurrentUser(userData);
+        setCurrentUser(userData.data);
         closeAllPopups();
       })
       .catch((err) => console.log(err));
@@ -116,7 +116,7 @@ function App() {
     api
       .addCard({ name, link })
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        setCards([newCard.data, ...cards]);
         closeAllPopups();
       })
       .catch((err) => console.log(err));
@@ -165,8 +165,8 @@ function App() {
   React.useEffect(() => {
     Promise.all([api.getCards(), api.getInfo()])
       .then(([cards, userData]) => {
-        setCurrentUser(userData);
-        setCards(cards);
+        setCurrentUser(userData.data);
+        setCards(cards.data);
       })
       .catch((err) => console.log(`Ошибка загрузки данных: ${err}`));
   }, []);

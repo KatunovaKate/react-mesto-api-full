@@ -6,10 +6,6 @@ class Api {
         this.name = config.name;
         this.avatar = config.avatar;
     }
-    
-    getToken = () => {
-        return `Bearer ${localStorage.getItem("jwt")}`
-    }
 
     _checkStatus(res) {
       if (res.ok) {
@@ -83,7 +79,7 @@ const api = new Api({
     url: "https://api.mesto.katunova.nomoredomains.work/",
     headers: {
       "Content-Type": 'application/json',
-      "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+      authorization: `Bearer ${localStorage.getItem('jwt')}`,
     },
   })
 
